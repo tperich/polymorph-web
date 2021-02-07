@@ -20,6 +20,7 @@ conn_info = f"{REMOTE_USER}@{REMOTE_HOST}:{REMOTE_PORT}"
 target = Connection(conn_info, config=fabric_config)
 
 # Deploy
+print("[$] Cleaning up...")
 dir_exists = target.run(f"file /tmp/{REPO_NAME}").exited == 0
 if dir_exists:
     target.run("rm -rf /tmp/{REPO_NAME}")
