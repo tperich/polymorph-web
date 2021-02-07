@@ -44,9 +44,9 @@ jobs:
       - name: Run fabric
         run: python bin/deploy.py
         env:
-		  REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-		  REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
-		  REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
           REMOTE_SUDO_PASSWORD: ${{ secrets.REMOTE_SUDO_PASSWORD }}
-		  REPO_URL: "ssh://github.com/$GITHUB_REPOSITORY"
+          REPO_URL: "ssh://github.com/$GITHUB_REPOSITORY"
 
