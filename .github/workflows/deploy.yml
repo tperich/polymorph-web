@@ -36,4 +36,6 @@ jobs:
       
       - name: Run fabric
         run: python bin/deploy.py
+        env:
+          REMOTE_SUDO_PASSWORD: ${{ secrets.REMOTE_SUDO_PASSWORD }}
 
