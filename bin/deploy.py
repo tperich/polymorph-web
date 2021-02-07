@@ -10,6 +10,7 @@ REMOTE_USER = decouple("REMOTE_USER", default="root")
 REMOTE_SUDO_PASSWORD = decouple("REMOTE_SUDO_PASSWORD")
 REPO_URL = decouple("REPO_URL", default="example.com")
 REPO_NAME = str(Path(REPO_URL).name)
+print(f"Repo name is: {REPO_NAME}")
 SITE_NAME = REPO_NAME.split("-")[0]
 
 # Set up fabric
