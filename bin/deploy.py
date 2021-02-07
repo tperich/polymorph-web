@@ -29,6 +29,6 @@ target.sudo(f"cp -r /tmp/{REPO_NAME}/* /var/www/{SITE_NAME}", pty=True)
 target.run(f"rm -rf /tmp/{REPO_NAME}")
 
 print("[$] Restarting nginx.service...")
-target.sudo("systemctl restart nginx")
+target.sudo("systemctl restart nginx", pty=True)
 
 print("[+] Done!")
