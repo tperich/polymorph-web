@@ -21,6 +21,7 @@ target = Connection(conn_info, config=fabric_config)
 
 # Deploy
 print(f"[$] Cloning {REPO_URL}...")
+target.sudo(f"rm -rf /tmp/{REPO_NAME}")
 target.run(f"git clone {REPO_URL} /tmp/{REPO_NAME}")
 
 print("[$] Updating files...")
