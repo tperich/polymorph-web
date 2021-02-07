@@ -15,7 +15,7 @@
 		<div id="box" class="animated fadeInDown">
 			<img class="logo" src="static/img/r3v2.png?c=ooGha6do">
 			<p class="text">DevOps & Security services</p>
-			<p class="text mail">office@polymorph.rs</p>
+			<a class="text mail" href="mailto:office@polymorph.rs">office@polymorph.rs</a>
 		</div>
 		
 		<script src="static/js/app.js?c=ooGha6do"></script>
