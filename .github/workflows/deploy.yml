@@ -35,11 +35,11 @@ jobs:
         run: pip install -r bin/requirements.txt
 
       - name: Install SSH key
-  		uses: shimataro/ssh-key-action@v2
-  		with:
-		  key: ${{ secrets.SSH_KEY }}
-		  known_hosts: ${{ secrets.KNOWN_HOSTS }}
-		  # config: ${{ secrets.CONFIG }}
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_KEY }}
+          known_hosts: ${{ secrets.KNOWN_HOSTS }}
+          # config: ${{ secrets.CONFIG }}
       
       - name: Run fabric
         run: python bin/deploy.py
