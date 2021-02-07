@@ -25,7 +25,7 @@ target.run(f"rm -rf /tmp/{REPO_NAME}")
 target.run(f"git clone {REPO_URL} /tmp/{REPO_NAME}")
 
 print("[$] Updating files...")
-target.sudp(f"rm -rf /var/www/{SITE_NAME}", pty=True)
+target.sudo(f"rm -rf /var/www/{SITE_NAME}", pty=True)
 target.sudo(f"cp -r /tmp/{REPO_NAME}/* /var/www/{SITE_NAME}", pty=True)
 target.run(f"rm -rf /tmp/{REPO_NAME}")
 
