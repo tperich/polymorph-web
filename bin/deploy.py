@@ -22,7 +22,7 @@ target = Connection(conn_info, config=fabric_config)
 
 # Deploy
 print("[$] Cleaning up...")
-target.sudo("rm -rf /tmp/{REPO_NAME}", pty=True)
+target.run("rm -rf /tmp/polymorph-web")
 target.sudo(f"rm -rf /var/www/{SITE_NAME}", pty=True)
 target.sudo(f"mkdir /var/www/{SITE_NAME}", pty=True)
 
