@@ -21,10 +21,8 @@ target = Connection(conn_info, config=fabric_config)
 
 # Deploy
 print("[$] Cleaning up...")
-dir_exists = target.run(f"file /tmp/{REPO_NAME}").exited == 0
-if dir_exists:
-    target.run("rm -rf /tmp/{REPO_NAME}")
-
+result = target.run("rm -rf /tmp/{REPO_NAME}")
+print(result.stdout.strip())
 target.sudo(f"rm -rf /var/www/{SITE_NAME}", pty=True)
 target.sudo(f"mkdir /var/www/{SITE_NAME}", pty=True)
 
