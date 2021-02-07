@@ -48,5 +48,5 @@ jobs:
           REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           REMOTE_SUDO_PASSWORD: ${{ secrets.REMOTE_SUDO_PASSWORD }}
-          REPO_URL: ssh://github.com/tperich/polymorph-web
+          REPO_URL: https://github.com/tperich/polymorph-web
 
