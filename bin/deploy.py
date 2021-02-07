@@ -20,12 +20,12 @@ conn_info = f"{REMOTE_USER}@{REMOTE_HOST}:{REMOTE_PORT}"
 target = Connection(conn_info, config=fabric_config)
 
 # Deploy
-try:
+dir_exists = target.run(f"file /tmp/{REPO_NAME}").exited == 0
+if dir_exists:
     target.run("rm -rf /tmp/{REPO_NAME}")
-    target.sudo(f"rm -rf /var/www/{SITE_NAME}", pty=True)
-    target.sudo(f"mkdir /var/www/{SITE_NAME}", pty=True)
-except:
-    pass
+
+target.sudo(f"rm -rf /var/www/{SITE_NAME}", pty=True)
+target.sudo(f"mkdir /var/www/{SITE_NAME}", pty=True)
 
 print(f"[$] Cloning {REPO_URL}...")
 target.run(f"git clone {REPO_URL} /tmp/{REPO_NAME}")
