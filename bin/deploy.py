@@ -10,7 +10,6 @@ REMOTE_USER = decouple("REMOTE_USER", default="root")
 REMOTE_SUDO_PASSWORD = decouple("REMOTE_SUDO_PASSWORD")
 REPO_URL = decouple("REPO_URL", default="example.com")
 REPO_NAME = str(Path(REPO_URL).name)
-print(f"Repo name is: {REPO_NAME}")
 SITE_NAME = REPO_NAME.split("-")[0]
 
 # Set up fabric
@@ -22,7 +21,7 @@ target = Connection(conn_info, config=fabric_config)
 
 # Deploy
 print("[$] Cleaning up...")
-target.run("rm -rf /tmp/polymorph-web")
+target.run("rm -rf /tmp/{REPO_NAME}")
 target.sudo(f"rm -rf /var/www/{SITE_NAME}", pty=True)
 target.sudo(f"mkdir /var/www/{SITE_NAME}", pty=True)
 
