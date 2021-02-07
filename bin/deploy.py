@@ -21,8 +21,7 @@ target = Connection(conn_info, config=fabric_config)
 
 # Deploy
 print("[$] Cleaning up...")
-result = target.run("rm -rf /tmp/{REPO_NAME}")
-print(result.stdout.strip())
+target.sudo("rm -rf /tmp/{REPO_NAME}", pty=True)
 target.sudo(f"rm -rf /var/www/{SITE_NAME}", pty=True)
 target.sudo(f"mkdir /var/www/{SITE_NAME}", pty=True)
 
