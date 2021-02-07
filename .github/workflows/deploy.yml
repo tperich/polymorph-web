@@ -35,5 +35,5 @@ jobs:
         run: pip install -r bin/requirements.txt
       
       - name: Run fabric
-        run: python bin/deploy.sh
+        run: python bin/deploy.py
 
