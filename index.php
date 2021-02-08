@@ -4,6 +4,8 @@
 	<head>
 		<title>Polymorph</title>
 		<meta charset="UTF-8">
+		<meta content="UTF-8" http-equiv="encoding">
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="static/css/style.css?c=ooGha6do"/>
 		<link rel="stylesheet" href="static/css/animate.min.css?c=ooGha6do"/>
